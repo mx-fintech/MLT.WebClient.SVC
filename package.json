@@ -4,7 +4,8 @@
   "description": "Web Interface For The Milatho CrowdFunding Platform based in Vanilla-JS, JQuery and Bootstrap",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon"
+    "test": "nodemon",
+    "start": "node server.js"
   },
   "keywords": [
     "Web",
@@ -27,7 +28,6 @@
     "handlebars": "^4.7.7",
     "handlebars-dateformat": "^1.1.1",
     "libphonenumber-js": "^1.9.23",
-    "mongodb": "^4.1.0",
     "multer": "^1.4.3",
     "multer-s3": "^2.9.0",
     "mysql": "^2.18.1",
@@ -35,5 +35,14 @@
     "redis": "^3.1.2",
     "shortid": "^2.2.16",
     "uuid": "^8.3.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CliffordMarley/MLT.WebClient.SVC.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CliffordMarley/MLT.WebClient.SVC/issues"
+  },
+  "homepage": "https://github.com/CliffordMarley/MLT.WebClient.SVC#readme"
 }
