@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+
+    {{!-- LOAD STYLESHEETS --}}
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="lib/GoogleWebMD/material-components-web.min.css.map">
+    <link rel="stylesheet" href="lib/GoogleWebMD/md.css">
+    <link rel="stylesheet" href="lib/sweetalerts/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="lib/toastfy/toastify.css">
+    {{!-- LOAD ESSENGTIAL JAVASCRIPT --}}
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script async src="js/app.jsx"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        {{>header}}
+        {{{body}}}
+    </div>
+</body>
+{{!-- LOAD SUPPORTING JAVASCRIPT --}}
+<script async src="js/accounting.jsx"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/semantic/dist/semantic.min.js"></script>
+<script src="lib/GoogleWebMD/md.js"></script>
+<script src="lib/sweetalerts/sweetalert.min.js"></script>
+<script src="lib/toastfy/toastify.js"></script>
+</html>

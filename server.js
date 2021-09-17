@@ -13,7 +13,7 @@ const app = express()
 const router = express.Router()
 
 //Imports Route Files
-const UserRoutes = require('./Routes/Users.Routes')(router)
+const UserRoutes = require('./Routes/Users.Routes')(router, SM)
 
 //Session Manager
 app.use(session(SM.Options()))
