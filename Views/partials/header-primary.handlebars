@@ -1,0 +1,80 @@
+<header class="row header-primary position-static">
+<div class="col-12 px-3 py-2 ui raised segment flat">
+    <div class="row">
+        <div class="col-md-4">
+           <div class="d-inline">
+                <div class="mx-1"  id="brand-image"></div>
+           </div>
+          
+           <h5 id="site-name"class="text-white"><a style='text-decoration: none;color:white;' href="/">Milatho <br> CrowdFunding </a></h5>
+        </div>
+        <div class="col-lg-4 text-center">
+             <ul class="header-nav pt-3">
+                 <li class="header-link mt-3"><a href="">Explore</a></li>
+                 <li class="header-link mt-3"><a href="">Contact</a></li>
+                 <li class="header-link mt-3"><a href="">About</a></li>
+             </ul>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-lg-2 pt-3 ">
+                     <li class="header-link mt-3 mx-1"><a href="">Login</a></li>
+                </div>
+                <div class="col-lg-8">
+                    <button class="btn btn-lg btn-theme text-white">Create Account</button>
+                </div>
+                <div class="col-lg-2">
+                    <div id="user-image"></div>
+                </div>
+            </div>
+            
+             
+        </div>
+    </div>
+</div>
+</header>
+
+<style>
+    .header-link a{
+      color:white;
+      text-decoration: none;
+      width:100% !important;
+      line-height:20px;
+      transition-property: font-size !important;
+      transition-duration:0.5s;
+      transition-delay: 0;
+    }
+    
+     .header-link a:hover{
+         color:rgb(255, 153, 0);
+         font-size: 12px;
+     }
+
+     #site-name a:hover{
+         color:rgb(255, 153, 0) !important;
+     }
+    .header-link{
+        display:inline !important;
+        margin-left:15px;
+        margin-top:10px;
+        list-style-type: none;
+        float:bottom;
+    }
+    .header-primary .col-12.ui.raised.segment{
+        width:100%;
+        background-color:#343A40;
+        color:white;
+    }
+    #brand-image, #user-image{
+        width:55px !important;
+        height:55px !important;
+        background-color:grey;
+        padding:2px;
+        float:left;
+    }
+    #user-image{
+        border-radius: 50%;
+        float:right;
+    }
+    
+</style>
