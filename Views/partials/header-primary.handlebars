@@ -17,14 +17,21 @@
         </div>
         <div class="col-md-4">
             <div class="row">
-                <div class="col-lg-2 pt-3 ">
-                     <li class="header-link mt-3 mx-1"><a href="">Login</a></li>
+                <div class="col-lg-5  pt-3 text-right ">
+                     {{#ifeq session.isLoggedIn true}}
+                           <li class="header-link mt-3 mx-1 float-right"><a href="logout">Sign Out</a></li>
+                      {{else}}
+                      <li class="header-link mt-3 mx-1 float-right"><a href="login">Sign In</a></li>
+                     {{/ifeq}}
+                     
                 </div>
-                <div class="col-lg-8">
-                    <button class="btn btn-lg btn-theme text-white">Create Account</button>
+                <div class="col-lg-5 text-right">
+                    <a href="/signup" class="btn btn-lg btn-theme text-white">Start a Campaign</a>
                 </div>
                 <div class="col-lg-2">
-                    <div id="user-image"></div>
+                    {{#ifeq session.isLoggedIn true}}
+                            <div id="user-image"></div>
+                    {{/ifeq}}
                 </div>
             </div>
             
@@ -47,7 +54,7 @@
     
      .header-link a:hover{
          color:rgb(255, 153, 0);
-         font-size: 12px;
+         font-size: 23px;
      }
 
      #site-name a:hover{

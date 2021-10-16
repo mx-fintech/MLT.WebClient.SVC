@@ -2,6 +2,8 @@ require("dotenv").config()
 
 const express = require("express")
 const cors = require("cors")
+const http = require('http')
+const reload = require('reload')
 const compression = require("compression")
 const session = require('express-session')
 const path = require('path')
@@ -85,6 +87,12 @@ Handlebars.registerHelper('dateFormat', function (date, options) {
     return moment(date).format(formatToUse);
 });
 
-app.listen(process.env.PORT, ()=>{
-    console.log(">> ML-WebClient-SVC Running on Port %s",process.env.PORT)
+const server = http.createServer(app)
+
+reload(app).then((reloadReturned)=>{
+    server.listen(process.env.PORT, ()=>{
+        console.log(">> ML-WebClient-SVC Running on Port %s",process.env.PORT)
+    })
+}).catch((err)=>{
+    console.error('Reload could no start : ', err)
 })

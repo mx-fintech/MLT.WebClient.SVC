@@ -1,37 +1,126 @@
+<div id="fb-root"></div>
 <div class="container mt-4">
-    <div class="row">
-        <div class="col-lg-6 mx-auto">
-           <h2 class="text-secondary"> SignIn To Your Milatho Account!</h2>
-            <hr>
-            <div class="row ">
-                <div class="col-12"><br></div>
-                <div class="col-md-6">
-                    <button class="btn btn-secondary py-3 btn-lg btn-block flat">
-                        Continue with Google
-                    </button>
+    <div class="row" style="padding-top:3% !important;">
+        <div class="col-lg-6 mx-auto" id="subcontainer">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="d-block">
+                        <div class="mx-1" id="brand-image"></div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <button class="btn btn-secondary py-3 btn-lg btn-block flat">
-                        Continue with Facebook
-                    </button>
+                <div class="col-8"></div>
+                <div class="col-12 pt-2">
+                    <div>
+                        <h1 style="font-weight:bold;">Login</h1>
+                    </div>
                 </div>
                 <div class="col-12">
-                    {{!-- <ui class="ui horizontal divider">OR</ui> --}}
                     <br>
                 </div>
-                <div class="col-12 form-group">
-                    <input type="email" placeholder="Email Address" class="form-control form-control-lg flat py-3" required/>
+               
+                
+                <div class="col-lg-6 mx-auto">
+                <form class="row" action="">
+               
+                <div class="col-lg-6 mx-auto">
+                   
                 </div>
-                <div class="col-12 form-group mt-2">
-                    <input type="password" placeholder="Password" class="form-control flat form-control-lg py-3" required/>
+                        <div class="col-12 form-group">
+                            <label class="mdc-text-field mdc-text-field--outlined username" style="width:100%;">
+                                <span class="mdc-notched-outline">
+                                    <span class="mdc-notched-outline__leading"></span>
+                                    <span class="mdc-notched-outline__notch">
+                                        <span class="mdc-floating-label" id="my-label-id">Email Address</span>
+                                    </span>
+                                    <span class="mdc-notched-outline__trailing"></span>
+                                </span>
+                                <input type="text" class="mdc-text-field__input " aria-labelledby="my-label-id">
+                            </label>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 form-group">
+                            <label class="mdc-text-field mdc-text-field--outlined password" style="width:100%;">
+                                <span class="mdc-notched-outline">
+                                    <span class="mdc-notched-outline__leading"></span>
+                                    <span class="mdc-notched-outline__notch">
+                                        <span class="mdc-floating-label" id="my-label-password">Password</span>
+                                    </span>
+                                    <span class="mdc-notched-outline__trailing"></span>
+                                </span>
+                                <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-password">
+                            </label>
+                        </div>
+                        <div class="col-12 mt-3 form-group">
+                            <button style="width:100%;" class="btn flat btn-lg btn-block btn-theme text-white">Continue</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-12">
-                     <button class="btn btn-secondary py-3 btn-lg btn-block flat">
-                        Proceed
-                    </button>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                         <div class="ui horizontal divider">Or Continue With</div>
+                    </div>
+                     <div class="col-12 text-center">
+                    <div style="border-radius:5px;" id="my-signin2"></div>
+                </div>
+                <div class="col-12"><br></div>
+                <div class="col-12 text-center">
+                    
+                    <div class="fb-login-button flat" data-width="240" data-size="large" data-button-type="login_with"
+                        data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                </div>
+                    </div>
+                </div>
+                <div class="col-8 mx-auto text-center pt-4">
+                    
+                    <p style="font-weight:bold;">Don't have an account yet? Click <a href="register">here</a> to quickly registered your account!</p>
                 </div>
             </div>
         </div>
-        .
     </div>
 </div>
+
+<style>
+    #brand-image {
+        width: 55px !important;
+        height: 55px !important;
+        background-color: rgb(161, 160, 160);
+        padding: 2px;
+        float: left;
+    }
+
+    #subcontainer {
+        padding-top: 15px !important;
+    }
+
+    #my-signin2{
+  width: 100%;
+}
+
+#my-signin2 > div{
+  margin: 0 auto;
+}
+.mdc-floating-label{
+    font-size:18px !important;
+    font-weight: bold !important;
+}
+</style>
+<script>
+    function onSuccess(googleUser) {
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+        console.log(error);
+    }
+    function renderButton() {
+        gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 240,
+            'height': 40,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+        });
+    }
+</script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-signin-client_id" content="641992506867-dfbko0ja6m8df845ihn7qu2r00gj7f4c.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="355926199503-uq3f6ab63an4u1hvnbjri6ke790bvmhp.apps.googleusercontent.com">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <title>{{title}}</title>
@@ -15,8 +15,11 @@
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css" integrity="sha512-pbLYRiE96XJxmJgF8oWBfa9MdKwuXhlV7vgs2LLlapHLXceztfcta0bdeOgA4reIf0WH67ThWzA684JwkM3zfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     {{!-- LOAD ESSENGTIAL JAVASCRIPT --}}
+
+    <script src="/reload/reload.js"></script>
     
 </head>
 <body>
@@ -24,14 +27,24 @@
         {{#ifeq header 'primary'}}
             {{>header-primary}}
         {{else}}
-            {{>header-secondary}}
+            {{#ifeq header 'secondary'}}
+                {{>header-secondary}}
+            {{/ifeq}}
         {{/ifeq}}
-        {{!-- {{{body}}} --}}
+        {{{body}}}
     </div>
 </body>
 {{!-- LOAD SUPPORTING JAVASCRIPT --}}
 <script src="dist/bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js" integrity="sha512-t5mAtfZZmR2gl5LK7WEkJoyHCfyzoy10MlerMGhxsXl3J7uSSNTAW6FK/wvGBC8ua9AFazwMaC0LxsMTMiM5gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script async src="js/app.jsx"></script>
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=966919860754209&autoLogAppEvents=1" nonce="crZFnH27"></script>
+<script>
+  let element = document.getElementsByClassName('mdc-text-field')
+  for(let i = 0; i < element.length; i++){
+    mdc.textField.MDCTextField.attachTo(element[i]);
+  }
+</script>
 </html>
